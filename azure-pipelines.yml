@@ -14,7 +14,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'Free Trial(1)(568faec2-1839-4005-b760-e83e667c24d2)'
+    backendServiceArm: 'azure-spn'
     backendAzureRmResourceGroupName: 'myproject'
     backendAzureRmStorageAccountName: 'projectnew1'
     backendAzureRmContainerName: 'container1'

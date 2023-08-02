@@ -19,7 +19,11 @@ steps:
     backendAzureRmStorageAccountName: 'projectnew1'
     backendAzureRmContainerName: 'container1'
     backendAzureRmKey: 'terraform.tf'
-
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Free Trial(568faec2-1839-4005-b760-e83e667c24d2)'
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'

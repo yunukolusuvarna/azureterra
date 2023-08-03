@@ -19,7 +19,7 @@ steps:
     backendAzureRmResourceGroupName: 'myproject'
     backendAzureRmStorageAccountName: 'projectnew1'
     backendAzureRmContainerName: 'container1'
-    backendAzureRmKey: 'terraform init'
+    backendAzureRmKey: 'terraform.tf'
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'

@@ -7,15 +7,15 @@ trigger:
 - main
 
 pool:
-  name: Default
+  name: newpipeline
 
 steps:
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
     command: 'init'
-    commandOptions: 'terraform init'
-    backendServiceArm: 'Free Trial(568faec2-1839-4005-b760-e83e667c24d2)'
+    commandOptions: 'terraforminit'
+    backendServiceArm: 'Free Trial(1)(568faec2-1839-4005-b760-e83e667c24d2)'
     backendAzureRmResourceGroupName: 'myproject'
     backendAzureRmStorageAccountName: 'projectnew1'
     backendAzureRmContainerName: 'container1'
@@ -31,4 +31,4 @@ steps:
     provider: 'azurerm'
     command: 'apply'
     commandOptions: 'terraform apply'
-    environmentServiceNameAzureRM: 'Free Trial(2)(568faec2-1839-4005-b760-e83e667c24d2)'
+    environmentServiceNameAzureRM: 'Free Trial(1)(568faec2-1839-4005-b760-e83e667c24d2)'

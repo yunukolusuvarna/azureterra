@@ -10,10 +10,25 @@ pool:
   name: Default
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+-
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Free Trial(2)(568faec2-1839-4005-b760-e83e667c24d2)'
+    backendAzureRmResourceGroupName: 'myproject'
+    backendAzureRmStorageAccountName: 'projectnew1'
+    backendAzureRmContainerName: 'container1'
+    backendAzureRmKey: 'terraform init'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    commandOptions: 'terraform plan'
+    environmentServiceNameAzureRM: 'Free Trial(3)(568faec2-1839-4005-b760-e83e667c24d2)'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    commandOptions: 'terraform apply'
+    environmentServiceNameAzureRM: 'Free Trial(4)(568faec2-1839-4005-b760-e83e667c24d2)'

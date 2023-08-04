@@ -15,7 +15,7 @@ steps:
     useazurerm: true
     azureSubscription: 'Free Trial(568faec2-1839-4005-b760-e83e667c24d2)'
     initbackend: true
-- - task: terraformplan@0
+- task: terraformplan@0
   inputs:
     useazurerm: true
     connectedServiceNameARM: 'Free Trial(568faec2-1839-4005-b760-e83e667c24d2)'

@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- task: terraforminit@0
+  inputs:
+    useazurerm: true
+    azureSubscription: 'Free Trial(568faec2-1839-4005-b760-e83e667c24d2)'
+    initbackend: true
+- task: terraformplan@0
+  inputs:
+    useazurerm: true
+    connectedServiceNameARM: 'Free Trial(3)(568faec2-1839-4005-b760-e83e667c24d2)'
+    usevarsfile: true
+    usevars: true
+    savePlanResult: true
+- task: terraformapply@0
+  inputs:
+    useazurerm: true
+    connectedServiceNameARM: 'Free Trial(2)(568faec2-1839-4005-b760-e83e667c24d2)'

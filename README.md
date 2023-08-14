@@ -18,15 +18,21 @@ Exercise 2: Build your application using Azure CI Pipeline
  Note: We also have a YAML build pipeline if that’s something you’re interested in. To proceed through the YAML pipeline, choose Terraform-CI-YAML and click Edit to view the YAML pipeline. If you utilize the YAML pipeline, make sure to update the Terraform-CD release definition’s artifact link.
 Your build pipeline will look like as below. This CI pipeline has tasks to compile .Net Core project. The dotnet tasks in the pipeline will restore dependencies, build, test and publish the build output into a zip file (package) which can be deployed to a web application.
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/2d058906-7dac-48b0-8a5f-0852fe7e3b85)
+
 In addition to the application build, we need to publish terraform files to build artifacts so that it will be available in CD pipeline. So we have added Copy files task to copy Terraform file to Artifacts directory.
+
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/32777aba-b685-4876-85a2-ee58deac5b15)
+
 Now click Queue to trigger the build. Once the build succeeds, verify that the artifacts have Terraform folder and PartsUnlimitedwebsite.zip file in the drop.
+
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/72e3cf05-d392-4faa-abcb-d6dece0e7c92)
+
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/e5c8b438-b1a5-4c8b-bd93-de3f2d481a9b)
 
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/5f406725-b78e-48ad-a635-7ebe89be0ddd)
 
 Exercise 3: Deploy resources using Terraform (IaC) in Azure CD pipeline
+
 In this exercise, you will create azure resources using Terraform as part of your deployment(CD) pipeline and deploy the PartsUnlimited application to the App service provisioned by Terraform.
 
 Navigate to Pipelines –> Releases. Select Terraform-CD and click Edit.
@@ -50,15 +56,19 @@ We have to create container on microsoft azure
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/f1177af6-9bbd-46ee-a35d-55387195f28f)
 
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/4269a651-7cc1-461f-b465-2b0916bceb82)
+
 We have add the container details in CD Variables 
 
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/4c32f492-6609-4655-910e-ee7bef7ee857)
+
 We have select the path of the azure app service
 
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/c0b3ac49-bfac-4e28-839a-dd68a6bab909)
 
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/adc98961-6621-4ffd-b7f1-7f3dcb817ef0)
+
 Save the job and release the job 
+
 You will see the tasks as below.
 
 Select the Azure CLI task. Select the Azure subscription from the drop-down list and click Authorize to configure Azure service connection.

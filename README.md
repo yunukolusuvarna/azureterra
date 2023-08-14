@@ -5,16 +5,20 @@ In this lab, you will use PartsUnlimited which is an example eCommerce website d
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/099bfee9-72da-49aa-aa25-1f87530e59d0)
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/00d70a30-bcf3-4812-9e53-255a3826a101)
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/98e5feeb-7437-48c3-a807-69bbb404a8ea)
+
 2.Select Repos. Switch to terraform branch.
 Make sure that you are now on the terraform branch and Terraform folder is there in the repo.
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/bb8ab34d-5a03-4b06-8aa0-89fec56bc182)
+
 Select the webapp.tf file under the Terraform folder. Go through the code.
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/205883e2-bdb7-4a6d-ab5f-f37c30ea6820)
+
 Exercise 2: Build your application using Azure CI Pipeline
 1.Navigate to Pipelines –> Pipelines. Select Terraform-CI and click Edit.
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/73ea7737-69a8-4f45-80b9-58ec86e32d7a)
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/1dd8ec65-c9f1-4253-97a7-a478d799bb92)
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/5fd2a62b-4139-406c-8dd3-80d1a23cd0f6)
+
  Note: We also have a YAML build pipeline if that’s something you’re interested in. To proceed through the YAML pipeline, choose Terraform-CI-YAML and click Edit to view the YAML pipeline. If you utilize the YAML pipeline, make sure to update the Terraform-CD release definition’s artifact link.
 Your build pipeline will look like as below. This CI pipeline has tasks to compile .Net Core project. The dotnet tasks in the pipeline will restore dependencies, build, test and publish the build output into a zip file (package) which can be deployed to a web application.
 ![image](https://github.com/yunukolusuvarna/azureterra/assets/134670646/2d058906-7dac-48b0-8a5f-0852fe7e3b85)
